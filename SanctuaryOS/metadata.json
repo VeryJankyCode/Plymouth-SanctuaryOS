@@ -8,10 +8,10 @@
             }
         ],
         "Category": "",
-        "Description": "sanctuaryOS splash screen",
-        "Id": "sanctuaryOS",
+        "Description": "SanctuaryOS splash screen",
+        "Id": "SanctuaryOS",
         "License": "GPLv3",
-        "Name": "sanctuaryOS",
+        "Name": "SanctuaryOS",
         "Website": ""
     },
     "Keywords": "Desktop;Workspace;Appearance;Look and Feel;Logout;Lock;Suspend;Shutdown;Hibernate;",

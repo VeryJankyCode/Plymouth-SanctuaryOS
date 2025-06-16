@@ -1,7 +1,20 @@
 /*
-     This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
-     This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
-     You should have received a copy of the GNU General Public License along with this program. If not, see <https://www.gnu.org/licenses/>.
+ *   Copyright 2014 Marco Martin <mart@kde.org>
+ *
+ *   This program is free software; you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License version 2,
+ *   or (at your option) any later version, as published by the Free
+ *   Software Foundation
+ *
+ *   This program is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details
+ *
+ *   You should have received a copy of the GNU General Public
+ *   License along with this program; if not, write to the
+ *   Free Software Foundation, Inc.,
+ *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
 import QtQuick 2.5
@@ -17,7 +30,6 @@ Rectangle {
         if (stage == 1) {
             introAnimation.running = true;
         } else if (stage == 5) {
-            introAnimation.target = busyIndicator;
             introAnimation.from = 1;
             introAnimation.to = 0;
             introAnimation.running = true;
@@ -37,52 +49,18 @@ Rectangle {
         }
 
         Rectangle {
-
-        id: imageSource
-        color:  "transparent"
-        anchors.fill: parent
-        clip: true;
- 
-        AnimatedImage { 
-            id: face
-            source: "images/plasma_d.gif"
-            paused: false 
+            id: imageSource
+            color:  "transparent"
             anchors.fill: parent
-            smooth: false
-            visible: true 
-         }
-    }
+            clip: true;
 
-       Image {
-            id: busyIndicator
-            //in the middle of the remaining space
-            y: parent.height - 150
-            anchors.horizontalCenter: parent.horizontalCenter
-            anchors.margins: units.gridUnit
-            source: "images/busywidget.svgz"
-            sourceSize.height: units.gridUnit * 2
-            sourceSize.width: units.gridUnit * 2
-            RotationAnimator on rotation {
-                id: rotationAnimator
-                from: 0
-                to: 360
-                duration: 1500
-                loops: Animation.Infinite
-            }
-        }
-        Row {
-            opacity: 0.5
-            spacing: units.smallSpacing*2
-            anchors {
-                bottom: parent.bottom
-                // right: parent.right
-                margins: units.gridUnit
-            }
-            anchors.horizontalCenter: parent.horizontalCenter
-            Image {
-                source: "images/kde.svgz"
-                sourceSize.height: units.gridUnit * 2
-                sourceSize.width: units.gridUnit * 2
+            AnimatedImage {
+                id: face
+                source: "images/plasma_d.gif"
+                paused: false
+                anchors.fill: parent
+                smooth: false
+                visible: true
             }
         }
     }
@@ -97,3 +75,4 @@ Rectangle {
         easing.type: Easing.InOutQuad
     }
 }
+
